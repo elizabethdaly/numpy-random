@@ -38,9 +38,11 @@ This README describes work done on the numpy.random package for the Programming 
 ## The purpose of the numpy.random package  <a name="section1"></a>
 What is a distribution function? Why are they needed? Why so many different types?
 
+To quote WIKIPEDIA: In probability theory and statistics, a **probability distribution** is a mathematical function that provides the probabilities of occurrence of different possible outcomes in an experiment. It describes the likliehood of obtaining the possible values that a random variable can take on. For example, the summer temperature values in Galway will fall within a fairly consistent range with some average value being the most likely one. The variable (temperature) can theoretically take on any value, but certain values are more likely to occur than others and there will be some spread in the measured values. This experiment could be simulated with a probability distribution. There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occar as the other with a fair coin. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
+
 ## Simple random data and Permutations <a name="section2"></a>
-### Simple random data <a name="sec2SRD"></a>
-### Permutations <a name="sec2PER"></a>
+### Simple random data functions <a name="sec2SRD"></a>
+### Permutations functions <a name="sec2PER"></a>
 
 ## Examples of distributions functions <a name="section3"></a>
 ### Example 1 <a name="#Eg1_sec3"></a>
@@ -50,6 +52,7 @@ What is a distribution function? Why are they needed? Why so many different type
 ### Example 5 <a name="#Eg5_sec3"></a>
 
 ## The use of seeds in generating pseudorandom numbers <a name="section4"></a>
+Pseudorandom numbers (as opposed to *random* numbers) are generated in the computer by algorithms, the bahviour of which can be predicted depending on the seed of the random number generator. 
 
 ## Conclusion <a name="conclusion"></a>
 
@@ -69,3 +72,7 @@ https://numpy.org/
 https://matplotlib.org/
 - [7] GitHub
 https://github.com/
+- [8] What is a probability distribution? 
+https://en.wikipedia.org/wiki/Probability_distribution
+- [9] Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython. 
+Wes McKinney. ISBN-13: 978-1491957660 ISBN-10: 1491957662
