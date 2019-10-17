@@ -1,4 +1,4 @@
-# numpy-random: The Python numpy.random package
+# The Python numpy.random package
 ## Elizabeth Daly
 
 ### HDip Data Analytics 2019 Programming for Data Analysis Assessment
@@ -33,18 +33,24 @@ https://github.com/elizabethdaly/numpy-random.git
 6. [References](#references)
 
 ## Introduction <a name="introduction"></a>
-This README describes work done on the numpy.random package for the Programming for Data Analysis module assessment, due 11 November 2019. Resources used include Python and associated packages Jupyter, matplotlib, and NumPy. The analysis takes the form of a single Jupyter notebook of filename given above. To view this file, download it from this repository and run Jupyter notebook, which comes as part of the Anaconda distribution of Python (as do the other packages listed above). Alternatively, view a static version of the notebook (by providing its GitHub url) using Jupyter Nbviewer. 
+This README describes work done on the numpy.random package for the Programming for Data Analysis module assessment, due 11 November 2019. Resources used include Python and associated packages Jupyter, matplotlib, and NumPy. The analysis takes the form of a single Jupyter notebook of filename given above. To view this file, download it from this repository and run Jupyter notebook, which comes as part of the Anaconda distribution of Python (as do the other packages listed above). Alternatively, view a static version of the notebook (by providing its GitHub url) using Jupyter Nbviewer. I have divided the work in the notebook into sections which roughly match this README.
 
 ## The purpose of the numpy.random package  <a name="section1"></a>
 What is a distribution function? Why are they needed? Why so many different types?
 
-To quote WIKIPEDIA: In probability theory and statistics, a **probability distribution** is a mathematical function that provides the probabilities of occurrence of different possible outcomes in an experiment. It describes the likliehood of obtaining the possible values that a random variable can take on. For example, the summer temperature values in Galway will fall within a fairly consistent range with some average value being the most likely one. The variable (temperature) can theoretically take on any value, but certain values are more likely to occur than others and there will be some spread in the measured values. This experiment could be simulated with a probability distribution. There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occar as the other with a fair coin. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
+To quote WIKIPEDIA: In probability theory and statistics, a **probability distribution** is a mathematical function that provides the probabilities of occurrence of different possible outcomes in an experiment. It describes the likliehood of obtaining the possible values that a random variable can take on. For example, imagine an experiment to measure the temperature in Galway every day over the summer. We know that the values will fall within a fairly consistent range, with some average value being the most common one. The variable (temperature) can theoretically take on any value, but certain values are more likely to occur than others and there will be some spread in the measured values. This experiment could be simulated with a probability distribution. At the end of the summer a histogram of temperature values would result in a bell-shaped curve. There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
 
 ## Simple random data and Permutations <a name="section2"></a>
+
 ### Simple random data functions <a name="sec2SRD"></a>
+The simple random data functions in the numpy.random package allow for the generation of random numbers of different types (floats, integers), within specified ranges, or from a provided array. The easiest way to explain the range of functionality provided is to illustrate with a few functions. Several functions have identical explanations in the documentation, but there must be subtle differences between them depending on the parameters given. 
+
+
 ### Permutations functions <a name="sec2PER"></a>
 
 ## Examples of distributions functions <a name="section3"></a>
+<!--real world examples of each?-->
+
 ### Example 1 <a name="#Eg1_sec3"></a>
 ### Example 2 <a name="#Eg2_sec3"></a>
 ### Example 3 <a name="#Eg3_sec3"></a>
@@ -68,11 +74,13 @@ https://jupyter.org/
 https://nbviewer.jupyter.org/
 - [5] NumPy
 https://numpy.org/
-- [6] matplotlib: Python plotting library
-https://matplotlib.org/
-- [7] GitHub
+- [6] Random sampling (numpy.random)
+https://docs.scipy.org/doc/numpy-1.16.0/reference/routines.random.html
+- [7] matplotlib: Python plotting library
+htts://matplotlib.org/
+- [8] GitHub
 https://github.com/
-- [8] What is a probability distribution? 
+- [9] What is a probability distribution? 
 https://en.wikipedia.org/wiki/Probability_distribution
-- [9] Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython. 
+- [10] Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython. 
 Wes McKinney. ISBN-13: 978-1491957660 ISBN-10: 1491957662
