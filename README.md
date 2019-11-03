@@ -44,25 +44,35 @@ In probability theory and statistics, the **probability distribution** of a vari
 
 ## 3. Simple random data and Permutations <a name="section2"></a>
 
-### 3.1 Simple random data functions <a name="sec2SRD"></a>
+### 3 (i) Simple random data functions <a name="sec2SRD"></a>
 The simple random data functions in the numpy.random package allow for the generation of arrays of random numbers of different types (floats, integers), within specified ranges, or from a provided array. The easiest way to explain the range of functionality provided is to illustrate with a few functions. Some functions on the documentation page appear to have identical explanations, but it turns out that some are deprecated (allowed but discouraged) and others are aliases to a single function.  
 
-### 3.2 Permutations functions <a name="sec2PER"></a>
+### 3 (ii) Permutations functions <a name="sec2PER"></a>
 The permutations functions provide for shuffling of data. 
 
 ## 4. Examples of distributions functions <a name="section3"></a>
 What is a distribution function? Why are they needed? Why so many different types?
 <!--real world examples of each?-->
-Explain pdf. continuous vs discrete. Refs. What 5 to pick? <!-- ones with easy to find and explain apps-->
+Explain pdf. continuous vs discrete. Refs. What 5 to pick? 
+<!-- ones with easy to find and explain apps-->
 
-### 4.1 normal <a name="#Eg1_sec3"></a>
+### 4 (i) normal <a name="#Eg1_sec3"></a>
 This function is used to generate random samples from a normal (Gaussian) distribution. It has a probability density function with a characteristic bell shaped curve. Refs. 
 
 The normal distributions occurs often in nature. 
-### 4.2 binomial <a name="#Eg2_sec3"></a>
-### 4.3 exponential <a name="#Eg3_sec3"></a>
-### 4.4 Example 4 <a name="#Eg4_sec3"></a>
-### 4.5 Example 5 <a name="#Eg5_sec3"></a>
+
+### 4 (ii) binomial <a name="#Eg2_sec3"></a>
+The binomial distribution is used to describe ...
+
+### 4 (iii) exponential <a name="#Eg3_sec3"></a>
+The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. The numpy.random documentation states that it can be used to used to model the size of raindrops in many rainstorms, or the time between page requests on Wikipedia. The lumen website in the references below has loads of examples of real world situations which can be simulated with the expinential distribution.
+Memoryless.
+
+
+### 4 (iv) Example 4 <a name="#Eg4_sec3"></a>
+
+
+### 4 (v) Example 5 <a name="#Eg5_sec3"></a>
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
 Pseudorandom numbers (as opposed to *random* numbers) are generated in the computer by algorithms, the behviour of which can be predicted depending on the seed of the random number generator. The numpy.random random number generation seed can be changed through use of numpy.random.seed.
@@ -121,3 +131,11 @@ https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/bi
 https://towardsdatascience.com/fun-with-the-binomial-distribution-96a5ecabf65b
 - [23] Poisson distribution
 https://www.statisticshowto.datasciencecentral.com/poisson-distribution/
+-[] Wolfram MathWorld: Exponential Distribution
+http://mathworld.wolfram.com/ExponentialDistribution.html
+- [] StatLect: Exponential Distribution
+https://www.statlect.com/probability-distributions/exponential-distribution
+- [] lumen: The Exponential Distribution
+https://courses.lumenlearning.com/introstats1/chapter/the-exponential-distribution/
+- []
+- []
