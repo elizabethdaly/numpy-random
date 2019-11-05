@@ -38,9 +38,9 @@ This README describes work done on the numpy.random package for the Programming 
 The Python NumPy package (Numerical Python) is widely used for numerical computing in Python. At its core is ndarry, a multidimensional array which allows for fast mathematical operations on arrays without the need to write loops. This is called vectorization *i.e.* operations on arrays of appropriate size are carried out element-wise. NumPy makes working with large arrays of data efficient. 
 
 ## 2. The purpose of the numpy.random package  <a name="section1"></a>
-There is a Python module called *random* which can be used to generate pseudorandom numbers. When researching the difference between it and numpy.random I found some useful stackoverflow posts. It seems that Python's built-in random module generates single numbers, while numpy.random can easily generate large arrays  (or just single numbers) containing sample values from lots of different kinds of probability distribution. It is based on the NumPy ndarray, which we have already mentioned. Arrays are essential for representing matrices, which are in turn very important in modelling real world scenarios. For example, in the past, I have performed the calculations for control systems and done image processing using matrix algebra.  
+There is a Python module called *random* which can be used to generate pseudorandom numbers, so why the need for numpy.random? When researching the difference between *random* and numpy.random I found some useful stackoverflow posts. It seems that Python's built-in random module generates single numbers, while numpy.random can easily generate large arrays  (or just single numbers) containing sample values from lots of different kinds of probability distribution. It is based on the NumPy ndarray, which we have already mentioned. Arrays are essential for representing matrices, which are in turn very important in modelling real world scenarios. For example, in the past, I have performed the calculations for control systems and done image processing using matrix algebra. numpy.random also contains functions to perform random shuffling of the contents of arrays and others which provide some information on, and control of, the seed used to generate the random numbers.  
 
-In probability theory and statistics, the **probability distribution** of a variable describes the relative numbers of times each possible outcome will occur in a number of trials. The mathematical function describing the probability that a particular value will occur is called the **probability density function** or **PDF**. It describes the likliehood of obtaining the possible values that a random variable can take on. For example, imagine an experiment to measure the temperature in Galway every day over the summer. We know that the values will fall within a fairly consistent range, with some average value being the most common one. The variable (temperature) can theoretically take on any value in a continuous range of values, but certain values are more likely to occur than others, so there will be some spread in the measured values. At the end of the summer a histogram of temperature values would result in a bell-shaped curve. This experiment could be simulated with a probability distribution of a continuous variable such as the normal distribution. There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The coin toss experiment could be simulated using a discrete PDF such as the binomial distribution. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
+In probability theory and statistics, the **probability distribution** of a variable describes the relative numbers of times each value of the variable will occur in a number of trials. The mathematical function describing the probability that a particular value will occur is called the **probability density function** or **PDF**. It describes the likliehood of obtaining the possible values that a random variable can take on. For example, imagine an experiment to measure the temperature in Galway every day over the summer. We know that the values will fall within a fairly consistent range, with some average value being the most common one. The variable (temperature) can theoretically take on any value in a continuous range of values, but certain values are more likely to occur than others, so there will be some spread in the measured values. At the end of the summer a histogram of temperature values would result in a bell-shaped curve. This experiment could be simulated with a probability distribution of a continuous variable such as the normal distribution. There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The coin toss experiment could be simulated using a discrete PDF such as the binomial distribution. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
 
 ## 3. Simple random data and Permutations <a name="section2"></a>
 
@@ -48,7 +48,7 @@ In probability theory and statistics, the **probability distribution** of a vari
 The simple random data functions in the numpy.random package allow for the generation of arrays of random numbers of different types (floats, integers), within specified ranges, or from a provided array. The easiest way to explain the range of functionality provided is to illustrate with a few functions. Some functions on the documentation page appear to have identical explanations, but it turns out that some are deprecated (allowed but discouraged) and others are aliases to a single function.  
 
 ### 3 (ii) Permutations functions <a name="sec2PER"></a>
-The permutations functions provide for shuffling of data. 
+The permutations functions provide for random shuffling of data. 
 
 ## 4. Examples of distributions functions <a name="section3"></a>
 What is a distribution function? Why are they needed? Why so many different types? What is the CDF?
@@ -66,7 +66,7 @@ Discrete.
 The binomial distribution is used to model a fixed number of trials n, each with a constant probability of success p. Our example above of flipping a fair coin (50% chance of getting a head) n times can be simulated using a binomial distribution. The Poisson distribution is a special case of the binomial when the number of trials becomes very large and the probability of success in each one is very small.
 
 ### 4 (iii) exponential <a name="#Eg3_sec3"></a>
-The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. The numpy.random documentation states that it can be used to used to model the size of raindrops in many rainstorms, or the time between page requests on Wikipedia. The lumen website in the references below has lots of examples of real world situations which can be simulated with the expinential distribution, such as:
+The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. The numpy.random documentation states that it can be used to used to model the size of raindrops in many rainstorms, or the time between page requests on Wikipedia. The lumen website in the references below also has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
 - 
 - 
 - 
@@ -78,7 +78,11 @@ Continuous. Named after Lord Rayleigh. Wave heights. Wind speed - turbines.
 ### 4 (v) Example 5 <a name="#Eg5_sec3"></a>
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
-Pseudorandom numbers (as opposed to *random* numbers) are generated in the computer by algorithms, the behviour of which can be predicted depending on the seed of the random number generator. The numpy.random random number generation seed can be changed through use of numpy.random.seed.
+The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly *random* ones) are generated in the computer via algorithms called preudorandom number generators. The behviour of a generator can be predicted if the seed used to initialize it is known. Obviously that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
+
+Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is shosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
+
+As both Python *random* and *numpy.random* are completely deterministic if some information about the seed of the generator is known, neither are suitable for security or cryptographic applications. There is a module called *secrets* which seems to be recommended for those types of application.
 
 ## 6. Conclusion <a name="conclusion"></a>
 
@@ -106,6 +110,8 @@ https://realpython.com/python-random/
 https://numpy.org/
 - [11] Random sampling (numpy.random)
 https://docs.scipy.org/doc/numpy-1.16.0/reference/routines.random.html
+- [] Real Python: Generating Random Data in Python (Guide)
+https://realpython.com/python-random/
 - [12] Differences between numpy.random and random.random in Python
 https://stackoverflow.com/questions/7029993/differences-between-numpy-random-and-random-random-in-python
 - [] Performance difference between numpy.random and random.random in Python
@@ -148,3 +154,7 @@ https://en.wikipedia.org/wiki/Rayleigh_distribution
 https://www.sciencedirect.com/topics/engineering/rayleigh-distribution
 - [] Staistics How To: Logistic Distribution
 https://www.statisticshowto.datasciencecentral.com/logistic-distribution/
+- [] WIKIPEDIA: Mersenne Twister
+https://en.wikipedia.org/wiki/Mersenne_Twister
+- [] stackoverflow: How to use random.RandomState
+https://stackoverflow.com/questions/32462273/how-to-use-random-randomstate
