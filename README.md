@@ -40,7 +40,7 @@ https://github.com/elizabethdaly/numpy-random.git
 - I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endevour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
 
 ## 2. The purpose of the numpy.random package  <a name="section1"></a>
-The Python NumPy package (Numerical Python) is widely used for numerical computing in Python. At its core is ndarry, a multidimensional array which allows for fast mathematical operations on arrays without the need to write loops. This is called vectorization *i.e.* operations on arrays of appropriate size are carried out element-wise. NumPy makes working with large arrays of data efficient.
+<!--The Python NumPy package (Numerical Python) is widely used for numerical computing in Python. At its core is ndarry, a multidimensional array which allows for fast mathematical operations on arrays without the need to write loops. This is called vectorization *i.e.* operations on arrays of appropriate size are carried out element-wise. NumPy makes working with large arrays of data efficient.-->
 
 There is a Python module called *random* which can be used to generate pseudorandom numbers, so why the need for numpy.random? When researching the difference between *random* and *numpy.random* I found some useful stackoverflow posts. It seems that Python's built-in random module generates single numbers, while numpy.random can easily generate large arrays  (or just single numbers) containing sample values from lots of different kinds of probability distribution. It is based on the NumPy ndarray, which we have already mentioned. Arrays are essential for representing matrices, which are in turn very important in modelling real world scenarios. For example, in the past, I have performed the calculations for control systems and done image processing using matrix algebra. numpy.random also contains functions to perform random shuffling of the contents of arrays and others which provide some information on, and control of, the seed used to generate the random numbers.  
 
@@ -84,11 +84,14 @@ A binomial distribution can be thought of as simply the probability of a success
 The Poisson distribution is a special case of the binomial when the number of trials becomes very large and the probability of success in each one is very small.
 
 ### 4 (iii) exponential <a name="#Eg3_sec3"></a>
-The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. The numpy.random documentation states that it can be used to used to model the size of raindrops in many rainstorms, or the time between page requests on Wikipedia. The lumen website in the references below also has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
-- one
-- two
-- three
-Memoryless.
+The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. One interesting thing I learned is that exponential distributions are the only continuous distributions that are memoryless. This means that means that the probability distribution is independent of its history. Any time may be marked down as time zero, so the likelihood of something happening in the future has no relation to whether or not it has happened in the past. This is also true of coin flips, but they follow the discrete binomial distribution. The lumen website in the references below also has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
+- The amount of time until an earthquake occurs, beginning now.
+- The amount of time, in months, a car battery lasts.
+- The value of change in your pocket over time.
+- The time between page requests on Wikipedia (in numpy.random documentation)
+- The size of raindrops (which grow with time) in rainstorms (in numpy.random documentation)
+- The number of days ahead of travel that people purchase flights.
+- Failure of computer parts over time.
 
 ### 4 (iv) rayleigh <a name="#Eg4_sec3"></a>
 Continuous. Named after Lord Rayleigh. Wave heights. Wind speed - turbines.
@@ -166,7 +169,7 @@ http://mathworld.wolfram.com/NormalDistribution.html
 
 **Binomial distribution:**
 
-- [20] WIKIPEDIA Binomial distribution
+- [20] WIKIPEDIA: Binomial distribution
 https://en.wikipedia.org/wiki/Binomial_distribution
 - [21] Binomial Distribution: Formula, What it is and How to use it
 https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/
@@ -179,12 +182,16 @@ https://www.statisticshowto.datasciencecentral.com/poisson-distribution/
 
 **Exponential distribution:**
 
--[] Wolfram MathWorld: Exponential Distribution
+- [] WIKIPEDIA: Exponential distribution
+https://en.wikipedia.org/wiki/Exponential_distribution
+- [] Wolfram MathWorld: Exponential Distribution
 http://mathworld.wolfram.com/ExponentialDistribution.html
 - [] StatLect: Exponential Distribution
 https://www.statlect.com/probability-distributions/exponential-distribution
 - [] lumen: The Exponential Distribution
 https://courses.lumenlearning.com/introstats1/chapter/the-exponential-distribution/
+- [] Staistics How To: Memoryless Property
+https://www.statisticshowto.datasciencecentral.com/memoryless-property/
 
 **Rayleigh distribution:**
 
@@ -192,10 +199,10 @@ https://courses.lumenlearning.com/introstats1/chapter/the-exponential-distributi
 https://en.wikipedia.org/wiki/Rayleigh_distribution
 - [] ScienceDirect: Rayleigh Distribution
 https://www.sciencedirect.com/topics/engineering/rayleigh-distribution
-- [] Staistics How To: Logistic Distribution
 
 **Logistic distribution:**
 
+- [] Staistics How To: Logistic Distribution
 https://www.statisticshowto.datasciencecentral.com/logistic-distribution/
 
 **Random number generators:**
