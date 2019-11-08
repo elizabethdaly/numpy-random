@@ -20,11 +20,11 @@ https://github.com/elizabethdaly/numpy-random.git
     2. [Permutations functions](#sec2PER)
     
 4. [Examples of distributions functions](#section3)
-    1. [Example 1](#Eg1_sec3)
-    2. [Example 2](#Eg2_sec3)
-    3. [Example 3](#Eg3_sec3)
-    4. [Example 4](#Eg4_sec3)
-    5. [Example 5](#Eg5_sec3)
+    1. [The normal distribution](#Eg1_sec3)
+    2. [The binomial distribution](#Eg2_sec3)
+    3. [The exponential distribution](#Eg3_sec3)
+    4. [The Rayleigh distribution](#Eg4_sec3)
+    5. [The logistic distribution](#Eg5_sec3)
     
 5. [The use of seeds in generating pseudorandom numbers](#section4)
     
@@ -42,7 +42,7 @@ https://github.com/elizabethdaly/numpy-random.git
 ## 2. The purpose of the numpy.random package  <a name="section1"></a>
 <!--The Python NumPy package (Numerical Python) is widely used for numerical computing in Python. At its core is ndarry, a multidimensional array which allows for fast mathematical operations on arrays without the need to write loops. This is called vectorization *i.e.* operations on arrays of appropriate size are carried out element-wise. NumPy makes working with large arrays of data efficient.-->
 
-There is a Python module called *random* which can be used to generate pseudorandom numbers, so why the need for numpy.random? When researching the difference between *random* and *numpy.random* I found some useful stackoverflow posts. It seems that Python's built-in random module generates single numbers, while numpy.random can easily generate large arrays  (or just single numbers) containing sample values from lots of different kinds of probability distribution. It is based on the NumPy ndarray, which we have already mentioned. Arrays are essential for representing matrices, which are in turn very important in modelling real world scenarios. For example, in the past, I have performed the calculations for control systems and done image processing using matrix algebra. numpy.random also contains functions to perform random shuffling of the contents of arrays and others which provide some information on, and control of, the seed used to generate the random numbers.  
+There is a Python module called *random* which can be used to generate pseudorandom numbers, so why the need for numpy.random? When researching the difference between *random* and *numpy.random* I found some useful stackoverflow posts. It seems that Python's built-in random module generates single numbers, while numpy.random can easily generate large arrays  (or just single numbers) containing sample values from lots of different kinds of probability distribution. It is based on the NumPy ndarray, which allows for fast mathematical operations on arrays without the need to write loops. Arrays are essential for representing matrices, which are in turn very important in modelling real world scenarios. For example, in the past, I have performed the calculations for control systems and done image processing using matrix algebra. numpy.random also contains functions to perform random shuffling of the contents of arrays and others which provide some information on, and control of, the seed used to generate the random numbers.  
 
 In probability theory and statistics, the **probability distribution** of a variable describes the probability of occurance of each possible value of the variable over a number of trials. The mathematical function describing the probability that a particular value will occur is called the **probability density function** or **PDF**. It describes the likliehood of obtaining the possible values that the random variable can take on. 
 
@@ -50,7 +50,7 @@ For example, imagine an experiment to measure the temperature in Galway every da
 
 There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The coin toss experiment could be simulated using a discrete PDF such as the binomial distribution. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
 
-The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probabitily that X will lie inside a specified range using the CDF. 
+The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probabitily that X will lie inside a specified range using its CDF. I demonstrate this in the notebook. 
 <!--pics of pdf and cdf maybe -->
 
 ## 3. Simple random data and Permutations <a name="section2"></a>
@@ -66,40 +66,47 @@ Intro.
 For each can calculate mean, variance, cdf etc moments.
 <!-- ones with easy to find and explain apps-->
 
-### 4 (i) normal <a name="#Eg1_sec3"></a>
+### 4 (i) The normal distribution <a name="#Eg1_sec3"></a>
 This function is used to generate random samples from a normal (Gaussian) distribution. It has a probability density function with a characteristic bell shaped curve. Refs. 
 
 The normal distributions occurs often in nature. 
 1. real world one
 2. real world two
 
-### 4 (ii) binomial <a name="#Eg2_sec3"></a>
+### 4 (ii) The binomial distribution <a name="#Eg2_sec3"></a>
 A binomial distribution can be thought of as simply the probability of a success or failure outcome in an experiment that is repeated multiple times. The binomial is a type of distribution that has two possible outcomes (the prefix “bi” means two, or twice), so the random variable is discrete. This distribution can be used to model a fixed number of trials n, each with a constant probability of success p. Our example above of flipping a fair coin (50% chance of getting a head) n times can be simulated using a binomial distribution. It can be used to simulate any experiment where the possible outcomes are success or failure such as:
 1. The chance of obtaining a certain number of heads on flipping a coin a number of times.
 2. The chance of winning (or not) a lottery.
 3. The success or failure of a drug in a clinical trial.
-4. The chances of finding oil (or not) when digging a well (in numpy.random documentation).
-5. The probability of a call centre employee of making a sale.  
+4. The chances of finding oil (or not) when digging a well (exampe in numpy.random documentation).
+5. The probability that a call centre employee will make a sale.  
 
-The Poisson distribution is a special case of the binomial when the number of trials becomes very large and the probability of success in each one is very small.
+The Poisson distribution (also available in numpy.random) is a special case of the binomial when the number of trials becomes very large and the probability of success in each one is very small.
 
-### 4 (iii) exponential <a name="#Eg3_sec3"></a>
-The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. One interesting thing I learned is that exponential distributions are the only continuous distributions that are memoryless. This means that means that the probability distribution is independent of its history. Any time may be marked down as time zero, so the likelihood of something happening in the future has no relation to whether or not it has happened in the past. This is also true of coin flips, but they follow the discrete binomial distribution. The lumen website in the references below also has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
+### 4 (iii) The exponential distribution <a name="#Eg3_sec3"></a>
+The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. One interesting thing I learned is that exponential distributions are the only continuous distributions that are memoryless. This means that the probability distribution is independent of its history: any time may be marked down as time zero, so the likelihood of something happening in the future has no relation to whether or not it has happened in the past. This is also true of coin flips, but they follow the discrete binomial distribution. The lumen website in the references below has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
 - The amount of time until an earthquake occurs, beginning now.
 - The amount of time, in months, a car battery lasts.
 - The value of change in your pocket over time.
-- The time between page requests on Wikipedia (in numpy.random documentation)
-- The size of raindrops (which grow with time) in rainstorms (in numpy.random documentation)
+- The time between page requests on Wikipedia (example in numpy.random documentation)
+- The size of raindrops (which grow with time) in rainstorms (example in numpy.random documentation)
 - The number of days ahead of travel that people purchase flights.
 - Failure of computer parts over time.
 
-### 4 (iv) rayleigh <a name="#Eg4_sec3"></a>
-Continuous. Named after Lord Rayleigh. Wave heights. Wind speed - turbines.
+### 4 (iv) The Rayleigh distribution <a name="#Eg4_sec3"></a>
+The Rayleigh distribution is a continuous probability distribution for positive random variables. It is mamed after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analyzed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
+The Rayleigh distribution can be used: 
+- to model the wind distribution for land-based wind turbine sites (the most common real-world application I found).
+- to account for the distribution of background noise in magnetic resonance images magnitude images.
+- to describe the distribution of wave heights under certain conditions (Science Direct reference).
+- in communications to model the paths taken by a signal traveling through a dense scatterer towards a receiver.  
 
-### 4 (v) Example 5 <a name="#Eg5_sec3"></a>
+It is a special case of the Weibul distribution, which is also available with numpy.random.
+
+### 4 (v) The logistic distribution <a name="#Eg5_sec3"></a>
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
-The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly *random* ones) are generated in the computer via algorithms called pseudorandom number generators. However, the behviour of a generator can be predicted if the seed used to initialize it is known. Obviously, that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
+The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly random ones) are generated in the computer via algorithms called pseudorandom number generators. However, the behviour of a generator can be predicted if the seed used to initialize it is known. Obviously, that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
 
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
 
@@ -199,6 +206,12 @@ https://www.statisticshowto.datasciencecentral.com/memoryless-property/
 https://en.wikipedia.org/wiki/Rayleigh_distribution
 - [] ScienceDirect: Rayleigh Distribution
 https://www.sciencedirect.com/topics/engineering/rayleigh-distribution
+- [] Brighton Webs Ltd.: Rayleigh Distribution
+https://web.archive.org/web/20090514091424/http://brighton-webs.co.uk:80/distributions/rayleigh.asp
+- [] MathWorks: Rayleigh distribution
+https://uk.mathworks.com/help/stats/rayleigh-distribution.html
+- [] Staistics How To: Rayleigh distribution
+https://www.statisticshowto.datasciencecentral.com/rayleigh-distribution/
 
 **Logistic distribution:**
 
