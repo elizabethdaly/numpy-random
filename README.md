@@ -83,7 +83,10 @@ The normal distributions occurs often in nature. The numpy.random documentation 
 - errors in physical experiments can be simulated with the normal distribution.
 - bell-curve grading can assign grades assuming a normal distribution.
 
-![normal](images/standard_normal.jpg)
+<p align="center"> 
+    <img src=images/standard_normal.jpg width="400" height="300">
+ </p>
+<!--![normal](images/standard_normal.jpg)-->
 
 ### 4.ii The binomial distribution <a name="#Eg2_sec3"></a>
 A binomial distribution can be thought of as simply the probability of a success or failure outcome in an experiment that is repeated multiple times. The binomial is a type of distribution that has two possible outcomes (the prefix “bi” means two, or twice), so the random variable is discrete. This distribution can be used to model a fixed number of trials n, each with a constant probability of success p. Our example above of flipping a fair coin (50% chance of getting a head) n times can be simulated using a binomial distribution. It can be used to simulate any experiment where the possible outcomes are success or failure such as:
