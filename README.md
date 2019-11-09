@@ -40,11 +40,13 @@ https://github.com/elizabethdaly/numpy-random.git
 - I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endevour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
 
 <p align="center"> 
-    <img src=images/Planche_de_Galton.jpg >
+    <img src=images/Planche_de_Galton.jpg width="800" height="600">
  </p>
-
+By Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
+<!--
 ![BeanMachine](images/Planche_de_galton.jpg)
 By Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
+-->
 
 
 ## 2. The purpose of the numpy.random package  <a name="section1"></a>
