@@ -42,8 +42,8 @@ https://github.com/elizabethdaly/numpy-random.git
 <p align="center"> 
     <img src=images/Planche_de_Galton.jpg width="400" height="300">
  </p>
-Image credit: Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
-This is an example of a bean machine, a device invented by Sir Francis Galton (in the days before numpy.random) to demonstrate that, for large sample sizes the binomial distribution approximates a normal distribution.  
+ 
+ ![PlancheDeGalton](https://commons.wikimedia.org/w/index.php?curid=4213838) *Image credit: Antoine Taveneaux - Own work, CC BY-SA 3.0* This is an example of a bean machine, a device invented by Sir Francis Galton (in the days before numpy.random) to demonstrate that, for large sample sizes, the binomial distribution approximates a normal distribution.  
 <!--
 ![BeanMachine](images/Planche_de_Galton.jpg)
 By Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
