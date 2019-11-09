@@ -39,6 +39,10 @@ https://github.com/elizabethdaly/numpy-random.git
 - All images intended for inclusion in this README are located in the **images** subdirectory of this repository.
 - I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endevour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
 
+![BeanMachine](images/Planche_de_galton.jpg)
+By Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
+
+
 ## 2. The purpose of the numpy.random package  <a name="section1"></a>
 <!--The Python NumPy package (Numerical Python) is widely used for numerical computing in Python. At its core is ndarry, a multidimensional array which allows for fast mathematical operations on arrays without the need to write loops. This is called vectorization *i.e.* operations on arrays of appropriate size are carried out element-wise. NumPy makes working with large arrays of data efficient.-->
 
@@ -62,18 +66,17 @@ The simple random data functions in the numpy.random package allow for the gener
 The permutations functions provide for random shuffling of data. 
 
 ## 4. Examples of distributions functions <a name="section3"></a>
-Intro.
-For each can calculate mean, variance, cdf etc moments.
-<!-- ones with easy to find and explain apps-->
+I will discuss five probability distributions here and illustrate their use in the Jupyter notebook. 
 
-### 4 (i) The normal distribution <a name="#Eg1_sec3"></a>
-This function is used to generate random samples from a normal (Gaussian) distribution. It has a probability density function with a characteristic bell shaped curve. Refs. 
+### 4 i The normal distribution <a name="#Eg1_sec3"></a>
+This function is used to generate random samples from a normal (Gaussian) distribution. It is a symmetric probability density function with a characteristic bell shaped curve. It is characterised primarily by its mean and variance.
+The normal distributions occurs often in nature. The numpy.random documentation states that it describes the distribution of samples influenced by a large number of tiny, random disturbances, each with its own unique distribution. Uses include:
+- IQ scores in a population are normally distibuted.
+- In biology the log of variables tend to be normally distributed, for example heights, weights, blood pressure of adult humans, lengths of hair, nails, and teeth.
+- errors in physical experiments can be simulated with the normal distribution.
+- bell-curve grading can assign grades assuming a normal distribution.
 
-The normal distributions occurs often in nature. 
-1. real world one
-2. real world two
-
-### 4 (ii) The binomial distribution <a name="#Eg2_sec3"></a>
+### 4 ii The binomial distribution <a name="#Eg2_sec3"></a>
 A binomial distribution can be thought of as simply the probability of a success or failure outcome in an experiment that is repeated multiple times. The binomial is a type of distribution that has two possible outcomes (the prefix “bi” means two, or twice), so the random variable is discrete. This distribution can be used to model a fixed number of trials n, each with a constant probability of success p. Our example above of flipping a fair coin (50% chance of getting a head) n times can be simulated using a binomial distribution. It can be used to simulate any experiment where the possible outcomes are success or failure such as:
 1. The chance of obtaining a certain number of heads on flipping a coin a number of times.
 2. The chance of winning (or not) a lottery.
@@ -83,7 +86,7 @@ A binomial distribution can be thought of as simply the probability of a success
 
 The Poisson distribution (also available in numpy.random) is a special case of the binomial when the number of trials becomes very large and the probability of success in each one is very small.
 
-### 4 (iii) The exponential distribution <a name="#Eg3_sec3"></a>
+### 4 iii The exponential distribution <a name="#Eg3_sec3"></a>
 The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. One interesting thing I learned is that exponential distributions are the only continuous distributions that are memoryless. This means that the probability distribution is independent of its history: any time may be marked down as time zero, so the likelihood of something happening in the future has no relation to whether or not it has happened in the past. This is also true of coin flips, but they follow the discrete binomial distribution. The lumen website in the references below has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
 - The amount of time until an earthquake occurs, beginning now.
 - The amount of time, in months, a car battery lasts.
@@ -93,8 +96,8 @@ The exponential distribution is a continuous probability distribution used to mo
 - The number of days ahead of travel that people purchase flights.
 - Failure of computer parts over time.
 
-### 4 (iv) The Rayleigh distribution <a name="#Eg4_sec3"></a>
-The Rayleigh distribution is a continuous probability distribution for positive random variables. It is mamed after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analyzed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
+### 4 iv The Rayleigh distribution <a name="#Eg4_sec3"></a>
+The Rayleigh distribution is a non-symmetric continuous probability distribution for positive random variables. It is mamed after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analyzed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
 The Rayleigh distribution can be used: 
 - to model the wind distribution for land-based wind turbine sites (the most common real-world application I found).
 - to account for the distribution of background noise in magnetic resonance images magnitude images.
@@ -103,7 +106,12 @@ The Rayleigh distribution can be used:
 
 It is a special case of the Weibul distribution, which is also available with numpy.random.
 
-### 4 (v) The logistic distribution <a name="#Eg5_sec3"></a>
+### 4 v The logistic distribution <a name="#Eg5_sec3"></a>
+The logistic distribution is a symmetric continuous probability distribution. It is very similar to the normal distribution but with higher tails (so that it falls away to zero a little more slowly). For this reason it is useful for predicting the likliehood of extreme events and for taking into account the underlying or base data. It is also used because its CDF (the logistic function) has a simple formula which approximates the normal distribution very well. It has applications in:
+- the modeling of population growth, 
+- logistic regression for classification purposes,
+- world chess rankings where the performance of each player is a logistically distributed random variable,
+- medicine to model the growth of tumours.
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
 The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly random ones) are generated in the computer via algorithms called pseudorandom number generators. However, the behviour of a generator can be predicted if the seed used to initialize it is known. Obviously, that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
@@ -217,6 +225,12 @@ https://www.statisticshowto.datasciencecentral.com/rayleigh-distribution/
 
 - [] Staistics How To: Logistic Distribution
 https://www.statisticshowto.datasciencecentral.com/logistic-distribution/
+- [] WIKIPEDIA: Logistic distribution
+https://en.wikipedia.org/wiki/Logistic_distribution
+- [] ScienceDirect: Logistic distribution
+https://www.sciencedirect.com/topics/mathematics/logistic-distribution
+- [] WIKIPEDIA: Logistic function
+https://en.wikipedia.org/wiki/Logistic_function
 
 **Random number generators:**
 
