@@ -40,7 +40,7 @@ https://github.com/elizabethdaly/numpy-random.git
 - I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endevour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
 
 <p align="center"> 
-    <img src="images/Planche_de_galton.jpg" alt="alternate text">
+    <img src=images/Planche_de_Galton.jpg >
  </p>
 
 ![BeanMachine](images/Planche_de_galton.jpg)
