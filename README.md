@@ -39,6 +39,10 @@ https://github.com/elizabethdaly/numpy-random.git
 - All images intended for inclusion in this README are located in the **images** subdirectory of this repository.
 - I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endevour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
 
+<p align="center"> 
+    <img src="images/Planche_de_galton.jpg" alt="alternate text">
+ </p>
+
 ![BeanMachine](images/Planche_de_galton.jpg)
 By Antoine Taveneaux - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4213838
 
@@ -54,15 +58,15 @@ For example, imagine an experiment to measure the temperature in Galway every da
 
 There are other experiemnts where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The coin toss experiment could be simulated using a discrete PDF such as the binomial distribution. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
 
-The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probabitily that X will lie inside a specified range using its CDF. I demonstrate this in the notebook. 
+The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probabitily that X will lie inside a specified range using its CDF. I demonstrate this in the notebook for some of the distributions. 
 <!--pics of pdf and cdf maybe -->
 
 ## 3. Simple random data and Permutations <a name="section2"></a>
 
-### 3 (i) Simple random data functions <a name="sec2SRD"></a>
+### 3 i Simple random data functions <a name="sec2SRD"></a>
 The simple random data functions in the numpy.random package allow for the generation of arrays of random numbers of different types (floats, integers), within specified ranges, or from a provided array. The easiest way to explain the range of functionality provided is to illustrate with a few functions. Some functions on the documentation page appear to have identical explanations, but it turns out that some are deprecated (allowed but discouraged) and others are aliases to a single function.  
 
-### 3 (ii) Permutations functions <a name="sec2PER"></a>
+### 3 ii Permutations functions <a name="sec2PER"></a>
 The permutations functions provide for random shuffling of data. 
 
 ## 4. Examples of distributions functions <a name="section3"></a>
@@ -121,6 +125,7 @@ Python uses the Mersenne Twister as the core generator. It was developed in 1997
 As both Python *random* and *numpy.random* are completely deterministic if some information about the seed of the generator is known, neither are suitable for security or cryptographic applications. There is a module called *secrets* which seems to be recommended for those types of application.
 
 ## 6. Conclusions <a name="conclusion"></a>
+Machine learning mastery...
 
 ## 7. References <a name="references"></a>
 
@@ -136,105 +141,107 @@ https://jupyter.org/
 https://nbviewer.jupyter.org/
 - [5] matplotlib: Python plotting library
 htts://matplotlib.org/
-- [10] NumPy
+- [6] NumPy
 https://numpy.org/
-- [6] GitHub
+- [7] GitHub
 https://github.com/
-- [15] Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython. 
+- [8] Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython. 
 Wes McKinney. ISBN-13: 978-1491957660 ISBN-10: 1491957662
-- [11] Random sampling (numpy.random)
+- [9] Random sampling (numpy.random)
 https://docs.scipy.org/doc/numpy-1.16.0/reference/routines.random.html
 
 **Related to random number generation in Python:**
 
-- [7] Python random module
+- [10] Python random module
 https://docs.python.org/3/library/random.html
-- [8] Python Random Number Generation tutorial
+- [11] Python Random Number Generation tutorial
 https://pynative.com/python-random-module/
-- [9] Generating Random Data in Python (Guide)
+- [12] Generating Random Data in Python (Guide)
 https://realpython.com/python-random/
-- [] Real Python: Generating Random Data in Python (Guide)
+- [13] Real Python: Generating Random Data in Python (Guide)
 https://realpython.com/python-random/
-- [12] Differences between numpy.random and random.random in Python
+- [14] Differences between numpy.random and random.random in Python
 https://stackoverflow.com/questions/7029993/differences-between-numpy-random-and-random-random-in-python
-- [] Performance difference between numpy.random and random.random in Python
+- [15] Performance difference between numpy.random and random.random in Python
 https://stackoverflow.com/questions/57220804/performance-difference-between-numpy-random-and-random-random-in-python
+- [16] Machine Learning Mastery: How to Generate Random Numbers in Python
+https://machinelearningmastery.com/how-to-generate-random-numbers-in-python/
 
 **Statistics:**
 
-- [13] STAT TREK Teach yourself statistics
+- [17] STAT TREK Teach yourself statistics
 https://stattrek.com/
-- [14] What is a probability distribution? 
+- [18] What is a probability distribution? 
 https://en.wikipedia.org/wiki/Probability_distribution
-- [16] Difference between various numpy random functions
+- [19] Difference between various numpy random functions
 https://stackoverflow.com/questions/18829185/difference-between-various-numpy-random-functions
-- [17] shuffle vs permute numpy
+- [20] shuffle vs permute numpy
 https://stackoverflow.com/questions/15474159/shuffle-vs-permute-numpy
-- [] What is the relationship betweeen a pdf and cdf?
+- [21] What is the relationship betweeen a pdf and cdf?
 https://math.stackexchange.com/questions/1302015/what-is-the-relationship-betweeen-a-pdf-and-cdf/1302451
 
 **Normal distribution:**
 
-- [18] Stat Trek The Normal Distribution
+- [22] Stat Trek The Normal Distribution
 https://stattrek.com/probability-distributions/normal.aspx
-- [19] WIKIPEDIA Normal distribution
+- [23] WIKIPEDIA Normal distribution
 https://en.wikipedia.org/wiki/Normal_distribution
-- [] Wolfram MathWorld: Normal Distribution
+- [24] Wolfram MathWorld: Normal Distribution
 http://mathworld.wolfram.com/NormalDistribution.html
 
 **Binomial distribution:**
 
-- [20] WIKIPEDIA: Binomial distribution
+- [25] WIKIPEDIA: Binomial distribution
 https://en.wikipedia.org/wiki/Binomial_distribution
-- [21] Binomial Distribution: Formula, What it is and How to use it
+- [26] Binomial Distribution: Formula, What it is and How to use it
 https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/
-- [22] Fun with the Binomial Distribution
+- [27] Fun with the Binomial Distribution
 https://towardsdatascience.com/fun-with-the-binomial-distribution-96a5ecabf65b
-- [] Deriving the Poisson Distribution from the Binomial Distribution
+- [28] Deriving the Poisson Distribution from the Binomial Distribution
 https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239
-- [23] Poisson distribution
+- [29] Poisson distribution
 https://www.statisticshowto.datasciencecentral.com/poisson-distribution/
 
 **Exponential distribution:**
 
-- [] WIKIPEDIA: Exponential distribution
+- [30] WIKIPEDIA: Exponential distribution
 https://en.wikipedia.org/wiki/Exponential_distribution
-- [] Wolfram MathWorld: Exponential Distribution
+- [31] Wolfram MathWorld: Exponential Distribution
 http://mathworld.wolfram.com/ExponentialDistribution.html
-- [] StatLect: Exponential Distribution
+- [32] StatLect: Exponential Distribution
 https://www.statlect.com/probability-distributions/exponential-distribution
-- [] lumen: The Exponential Distribution
+- [33] lumen: The Exponential Distribution
 https://courses.lumenlearning.com/introstats1/chapter/the-exponential-distribution/
-- [] Staistics How To: Memoryless Property
+- [34] Staistics How To: Memoryless Property
 https://www.statisticshowto.datasciencecentral.com/memoryless-property/
 
 **Rayleigh distribution:**
 
-- [] WIKIPEDIA: Rayleigh distribution
+- [35] WIKIPEDIA: Rayleigh distribution
 https://en.wikipedia.org/wiki/Rayleigh_distribution
-- [] ScienceDirect: Rayleigh Distribution
+- [36] ScienceDirect: Rayleigh Distribution
 https://www.sciencedirect.com/topics/engineering/rayleigh-distribution
-- [] Brighton Webs Ltd.: Rayleigh Distribution
+- [37] Brighton Webs Ltd.: Rayleigh Distribution
 https://web.archive.org/web/20090514091424/http://brighton-webs.co.uk:80/distributions/rayleigh.asp
-- [] MathWorks: Rayleigh distribution
+- [38] MathWorks: Rayleigh distribution
 https://uk.mathworks.com/help/stats/rayleigh-distribution.html
-- [] Staistics How To: Rayleigh distribution
+- [39] Staistics How To: Rayleigh distribution
 https://www.statisticshowto.datasciencecentral.com/rayleigh-distribution/
 
 **Logistic distribution:**
 
-- [] Staistics How To: Logistic Distribution
+- [40] Staistics How To: Logistic Distribution
 https://www.statisticshowto.datasciencecentral.com/logistic-distribution/
-- [] WIKIPEDIA: Logistic distribution
+- [41] WIKIPEDIA: Logistic distribution
 https://en.wikipedia.org/wiki/Logistic_distribution
-- [] ScienceDirect: Logistic distribution
+- [42] ScienceDirect: Logistic distribution
 https://www.sciencedirect.com/topics/mathematics/logistic-distribution
-- [] WIKIPEDIA: Logistic function
+- [43] WIKIPEDIA: Logistic function
 https://en.wikipedia.org/wiki/Logistic_function
 
 **Random number generators:**
 
-- [] WIKIPEDIA: Mersenne Twister
+- [44] WIKIPEDIA: Mersenne Twister
 https://en.wikipedia.org/wiki/Mersenne_Twister
-- [] stackoverflow: How to use random.RandomState
+- [45] stackoverflow: How to use random.RandomState
 https://stackoverflow.com/questions/32462273/how-to-use-random-randomstate
