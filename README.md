@@ -157,6 +157,7 @@ The Real Python reference below asks the question: How random is random? Pseudor
  </p>
  Image: https://www.sharpsightlabs.com
 
+
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
 
 As both Python *random* and *numpy.random* are completely deterministic if some information about the seed of the generator is known, neither are suitable for security or cryptographic applications. There is a module called *secrets* which seems to be recommended for those types of application.
@@ -166,6 +167,7 @@ The purpose of the numpy.random package is to make the generation of large array
 - random initialization of weights in an artificial neural network,
 - random splitting of data into train/test sets,
 - random shuffling of the training data set in stochastic gradient descent,
+
 as being important ones for which a good understanding of randomness is essential.
 
 ## 7. References <a name="references"></a>
