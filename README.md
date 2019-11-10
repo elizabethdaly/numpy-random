@@ -86,7 +86,7 @@ The normal distributions occurs often in nature. The numpy.random documentation 
 <p align="center"> 
     <img src=images/standard_normal.jpg width="400" height="300">
  </p>
-Image: //www.compensationcafe.com
+<p style="text-align: center;">Image: //www.compensationcafe.com</p>
 
 
 ### 4.ii The binomial distribution <a name="#Eg2_sec3"></a>
@@ -102,7 +102,7 @@ The Poisson distribution (also available in numpy.random) is a special case of t
 <p align="center"> 
     <img src=images/binomial.png width="400" height="300">
  </p>
-Image: https://www.spss-tutorials.com
+<p style="text-align: center;">Image: https://www.spss-tutorials.com</p>
 
 
 ### 4.iii The exponential distribution <a name="#Eg3_sec3"></a>
@@ -118,7 +118,7 @@ The exponential distribution is a continuous probability distribution used to mo
 <p align="center"> 
     <img src=images/expdist2.gif width="400" height="300">
  </p>
- Image: https://www.individual.utoronto.ca
+ <p style="text-align: center;">Image: https://www.individual.utoronto.ca</p>
 
 ### 4.iv The Rayleigh distribution <a name="#Eg4_sec3"></a>
 The Rayleigh distribution is a non-symmetric continuous probability distribution for positive random variables. It is named after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analysed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
@@ -133,7 +133,7 @@ It is a special case of the Weibul distribution, which is also available with nu
 <p align="center"> 
     <img src=images/Rayleigh_distribution.jpg width="400" height="300">
  </p>
- Image: https://slideplayer.com
+ <p style="text-align: center;">Image: https://slideplayer.com</p>
 
 
 ### 4.v The logistic distribution <a name="#Eg5_sec3"></a>
@@ -146,7 +146,7 @@ The logistic distribution is a symmetric continuous probability distribution. It
 <p align="center"> 
     <img src=images/logistic.gif width="400" height="300">
  </p>
- Image: https://www.vosesoftware.com
+ <p style="text-align: center;">Image: https://www.vosesoftware.com</p>
 
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
@@ -155,7 +155,7 @@ The Real Python reference below asks the question: How random is random? Pseudor
 <p align="center"> 
     <img src=images/numpy-random-seed_featured-image.png width="400" height="300">
  </p>
- Image: https://www.sharpsightlabs.com
+ <p style="text-align: center;">Image: https://www.sharpsightlabs.com</p>
 
 
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
