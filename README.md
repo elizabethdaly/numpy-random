@@ -86,7 +86,7 @@ The normal distributions occurs often in nature. The numpy.random documentation 
 <p align="center"> 
     <img src=images/standard_normal.jpg width="400" height="300">
  </p>
-Image source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjtgr_xiN7lAhWhwOYKHcYmBHcQjB16BAgBEAM&url=https%3A%2F%2Fwww.compensationcafe.com%2F2014%2F04%2Fding-dong-the-wicked-bell-curve-is-dead.html&psig=AOvVaw2A1GqUaDTRwlf9SzgX1N2Q&ust=1573421198223745
+Image: //www.compensationcafe.com
 
 ### 4.ii The binomial distribution <a name="#Eg2_sec3"></a>
 A binomial distribution can be thought of as simply the probability of a success or failure outcome in an experiment that is repeated multiple times. The binomial is a type of distribution that has two possible outcomes (the prefix “bi” means two, or twice), so the random variable is discrete. This distribution can be used to model a fixed number of trials n, each with a constant probability of success p. Our example above of flipping a fair coin (50% chance of getting a head) n times can be simulated using a binomial distribution. It can be used to simulate any experiment where the possible outcomes are success or failure such as:
@@ -101,7 +101,7 @@ The Poisson distribution (also available in numpy.random) is a special case of t
 <p align="center"> 
     <img src=images/binomial.png width="400" height="300">
  </p>
-Image source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjW0_Said7lAhV6URUIHQ37D-0QjB16BAgBEAM&url=https%3A%2F%2Fwww.spss-tutorials.com%2Fbinomial-test%2F&psig=AOvVaw1qbR4s5zqscEj-yX3rPk4N&ust=1573421284940518
+Image: https://www.spss-tutorials.com
 
 ### 4.iii The exponential distribution <a name="#Eg3_sec3"></a>
 The exponential distribution is a continuous probability distribution used to model the time we must wait before some given event occurs. One interesting thing I learned is that exponential distributions are the only continuous distributions that are memoryless. This means that the probability distribution is independent of its history: any time may be marked down as time zero, so the likelihood of something happening in the future has no relation to whether or not it has happened in the past. This is also true of coin flips, but they follow the discrete binomial distribution. The lumen website in the references below has lots of examples of real world situations which can be simulated with the exponential distribution. These include:
@@ -114,9 +114,9 @@ The exponential distribution is a continuous probability distribution used to mo
 - Failure of computer parts over time.
 
 <p align="center"> 
-    <img src=images/exp2dist.gif width="400" height="300">
+    <img src=images/expdist2.gif width="400" height="300">
  </p>
- Image source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiY76enit7lAhURRBUIHe5sDKUQjB16BAgBEAM&url=http%3A%2F%2Findividual.utoronto.ca%2Franodya%2F6P1.html&psig=AOvVaw0oOwmmwb-inqbz3rGu0yju&ust=1573421565525709
+ Image: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiY76enit7lAhURRBUIHe5sDKUQjB16BAgBEAM&url=http%3A%2F%2Findividual.utoronto.ca%2Franodya%2F6P1.html&psig=AOvVaw0oOwmmwb-inqbz3rGu0yju&ust=1573421565525709
 
 ### 4.iv The Rayleigh distribution <a name="#Eg4_sec3"></a>
 The Rayleigh distribution is a non-symmetric continuous probability distribution for positive random variables. It is mamed after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analyzed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
@@ -129,9 +129,9 @@ The Rayleigh distribution can be used:
 It is a special case of the Weibul distribution, which is also available with numpy.random.
 
 <p align="center"> 
-    <img src=images/rayleigh_distribution.jpg width="400" height="300">
+    <img src=images/Rayleigh_distribution.jpg width="400" height="300">
  </p>
- Image source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi6ioXOit7lAhW3UBUIHbrcDcwQjB16BAgBEAM&url=https%3A%2F%2Fslideplayer.com%2Fslide%2F6371452%2F&psig=AOvVaw2jnUuLu7Tka2DEn6UcWRZR&ust=1573421658169545
+ Image: https://slideplayer.com
 
 ### 4.v The logistic distribution <a name="#Eg5_sec3"></a>
 The logistic distribution is a symmetric continuous probability distribution. It is very similar to the normal distribution but with higher tails (so that it falls away to zero a little more slowly). For this reason it is useful for predicting the likliehood of extreme events and for taking into account the underlying or base data. It is also used because its CDF (the logistic function) has a simple formula which approximates the normal distribution very well. It has applications in:
@@ -143,7 +143,7 @@ The logistic distribution is a symmetric continuous probability distribution. It
 <p align="center"> 
     <img src=images/logistic.gif width="400" height="300">
  </p>
- Image source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjP6Nfmit7lAhUSsXEKHe6aDaEQjB16BAgBEAM&url=https%3A%2F%2Fwww.vosesoftware.com%2Friskwiki%2FLogisticdistribution.php&psig=AOvVaw3nGjr-iFgcmVQ8UYB4VUO-&ust=1573421711701628
+ Image: https://www.vosesoftware.com
 
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
 The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly random ones) are generated in the computer via algorithms called pseudorandom number generators. However, the behviour of a generator can be predicted if the seed used to initialize it is known. Obviously, that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
@@ -151,7 +151,7 @@ The Real Python reference below asks the question: How random is random? Pseudor
 <p align="center"> 
     <img src=images/numpy-random-seed_featured-image.png width="400" height="300">
  </p>
- Image source: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sharpsightlabs.com%2Fblog%2Fnumpy-random-seed%2F&psig=AOvVaw1jx-S0WIHVQT2hOhBVGYLu&ust=1573469753176000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCOi_wOW93-UCFQAAAAAdAAAAABAD
+ Image: https://Fwww.sharpsightlabs.com
 
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
 
