@@ -37,7 +37,7 @@ https://github.com/elizabethdaly/numpy-random.git
 - The analysis takes the form of a single Jupyter notebook of filename given above. To view this file, download it from this repository and start Jupyter notebook from the folder containing the file. Jupyter notebook comes as part of the Anaconda distribution of Python (as do the other packages listed above). 
 - Alternatively, view a static version of the notebook (by providing its GitHub url) using Jupyter Nbviewer.
 - All images intended for inclusion in this README are located in the **images** subdirectory of this repository.
-- I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. I will endeavour to have this README summarize the work of the notebook and, hopefully, complement the analyses done there.
+- I have tried to structure the Jupyter notebook and this README so that they have corresponding sections. However, I do not wish to merely repeat here what has been stated in the notebook. Therefore, I will endeavour to have this README complement the analyses performed in the notebook.
 
 <p align="center"> 
     <img src=images/Planche_de_Galton.jpg width="400" height="300">
@@ -57,11 +57,11 @@ There is a Python module called *random* which can be used to generate pseudoran
 
 In probability theory and statistics, the **probability distribution** of a variable describes the probability of occurrence of each possible value of the variable over a number of trials. The mathematical function describing the probability that a particular value will occur is called the **probability density function** or **PDF**. It describes the likelihood of obtaining the possible values that the random variable can take on. 
 
-For example, imagine an experiment to measure the temperature in Galway every day over the summer. We know that the values will fall within a fairly consistent range, and the most commonly measured value will be the average or mean. The variable (temperature) can theoretically take on any value in a continuous range of values, but certain values are more likely to occur than others, so there will be some spread in the measured values around the mean. At the end of the summer a histogram of temperature values would result in a bell-shaped curve. This experiment could be simulated with a probability distribution of a continuous variable such as the normal distribution. 
+For example, imagine an experiment to measure the temperature in Galway every day over the summer. We know that the values will fall within a fairly consistent range, and the most commonly measured value will be the average or mean. The variable (temperature) can theoretically take on any value in a continuous range of values, but certain values are more likely to occur than others, so there will be some spread in the measured values around the mean. At the end of the summer a histogram of temperature values would result in a bell-shaped curve. This experiment could be simulated with a probability distribution of a continuous variable such as the normal distribution, of given mean and standard deviation. 
 
 There are other experiments where the output is discrete rather than continuous. The simplest example of such an experiment is to imagine flipping a coin a number of times and attempting to predict how often each of the possible outcomes, heads (H) or tails (T), will occur. Here, the possible outcomes are discrete (H or T) and each is as likely to occur as the other with a fair coin. The coin toss experiment could be simulated using a discrete PDF such as the binomial distribution. The numpy.random package provides the ability to simulate any random process as it can be used to generate sample values from many types of probability distribution.
 
-The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probability that X will lie inside a specified range using its CDF. I demonstrate this in the notebook for some of the distributions. 
+The **cumulative probability distribution (CDF)** of a random variable X, with a given PDF, is the probability that X will have values less than or equal to x. The CDF is obtained by integrating the PDF up to x; it is the area under the PDF curve up to x. So, if we know the distribution of some random variable X, we can make predictions about the probability that X will lie inside a specified range using its CDF. I demonstrate its use in the notebook for some of the distributions discussed. 
 <!--pics of pdf and cdf maybe -->
 
 ## 3. Simple random data and Permutations <a name="section2"></a>
@@ -77,7 +77,7 @@ I will discuss five probability distributions here and illustrate their use in t
 
 ### 4.i The normal distribution <a name="#Eg1_sec3"></a>
 This function is used to generate random samples from a normal (Gaussian) distribution. It is a symmetric probability density function with a characteristic bell shaped curve. It is characterised primarily by its mean and variance.
-The normal distributions occurs often in nature. The numpy.random documentation states that it describes the distribution of samples influenced by a large number of tiny, random disturbances, each with its own unique distribution. Uses include:
+Normal distributions occur often in nature. The numpy.random documentation states that it describes the distribution of samples influenced by a large number of tiny, random disturbances, each with its own unique distribution. Uses include:
 - IQ scores in a population are normally distributed.
 - In biology the log of variables tend to be normally distributed, for example heights, weights, blood pressure of adult humans, lengths of hair, nails, and teeth.
 - errors in physical experiments can be simulated with the normal distribution.
@@ -86,7 +86,7 @@ The normal distributions occurs often in nature. The numpy.random documentation 
 <p align="center"> 
     <img src=images/standard_normal.jpg width="400" height="300">
  </p>
-Image: //www.compensationcafe.com
+Image: https://www.compensationcafe.com
 
 
 ### 4.ii The binomial distribution <a name="#Eg2_sec3"></a>
@@ -124,7 +124,7 @@ The exponential distribution is a continuous probability distribution used to mo
 The Rayleigh distribution is a non-symmetric continuous probability distribution for positive random variables. It is named after Lord Rayleigh, a British physicist who provided the first theoretical explanation for why the sky is blue, among other things. A Rayleigh distribution is often observed when the magnitude of a vector is related to its directional components. For example, when wind speed is analysed in two directions (say east and west components), the overall wind speed will follow a Rayleigh distribution. Each component must be normally distributed, with zero mean and equal variances, and there must be no linear relationship between the two constituent components. Knowledge of the wind speed distribution is very important when selecting sites for wind turbines for example. The mean and variance of this distribution are calculated from its scale (see the Jupyter notebook).
 The Rayleigh distribution can be used: 
 - to model the wind distribution for land-based wind turbine sites (the most common real-world application I found).
-- to account for the distribution of background noise in magnetic resonance images magnitude images.
+- to account for the distribution of background noise in magnetic resonance magnitude images.
 - to describe the distribution of wave heights under certain conditions (Science Direct reference).
 - in communications to model the paths taken by a signal traveling through a dense scatterer towards a receiver.  
 
@@ -133,7 +133,7 @@ It is a special case of the Weibul distribution, which is also available with nu
 <p align="center"> 
     <img src=images/Rayleigh_distribution.jpg width="400" height="300">
  </p>
- Image: https://slideplayer.com
+ Image: https://www.slideplayer.com
 
 
 ### 4.v The logistic distribution <a name="#Eg5_sec3"></a>
@@ -154,16 +154,19 @@ The Real Python reference below asks the question: How random is random? Pseudor
 
 <p align="center"> 
     <img src=images/numpy-random-seed_featured-image.png width="400" height="300">
-    Image: https://www.sharpsightlabs.com
  </p>
- 
+ Image: https://www.sharpsightlabs.com
 
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
 
 As both Python *random* and *numpy.random* are completely deterministic if some information about the seed of the generator is known, neither are suitable for security or cryptographic applications. There is a module called *secrets* which seems to be recommended for those types of application.
 
 ## 6. Conclusions <a name="conclusion"></a>
-Machine learning mastery...
+The purpose of the numpy.random package is to make the generation of large arrays of random data, containing sample values from lots of different kinds of probability distribution, very efficient. The ability to generate samples of random data is important when simulating experiments where it is just not possible to measure a whole population. The package could also be used to simulate an experiment (that might be practically difficult to perform) given certain experimental parameters. So, simulations can help to design better experiments. The accompanying Jupyter notebook demonstrates how some of the functions in the numpy.random package can be used. Random numbers are also very important for machine learning in data analytics, as discussed in the machine learning mastery reference below. That reference lists tasks such as:
+- random initialization of weights in an artificial neural network,
+- random splitting of data into train/test sets,
+- random shuffling of the training data set in stochastic gradient descent,
+as being important ones for which a good understanding of randomness is essential.
 
 ## 7. References <a name="references"></a>
 
