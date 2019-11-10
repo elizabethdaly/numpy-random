@@ -160,9 +160,9 @@ The Real Python reference below asks the question: How random is random? Pseudor
 
 <p align="center"> 
     <img src=images/numpy-random-seed_featured-image.png width="400" height="300">
+    Image: https://www.sharpsightlabs.com
  </p>
- <div style="text-align: center">Image: https://www.sharpsightlabs.com</div>
-
+ 
 
 Python uses the Mersenne Twister as the core generator. It was developed in 1997 and is now the most widely-used pseudorandom number generator. The period length of the generator is chosen to be a Mersenne Prime, hence its name. A Mersenne prime is a prime number that is one less than a power of two; it has the form 2<sup>n</sup>-1 where n is an integer. The algorithm itself generates numbers in the range [0, 2<sup>w</sup>-1] where w is the word size in bits. The state of the pseudorandom number generator must be initialized or seeded by providing a w-bit seed value. The last group of functions in the numpy.random package is concerned with this seed. The Jupyter notebook associated with this README contains some examples of their use.
 
