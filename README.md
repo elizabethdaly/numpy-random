@@ -152,6 +152,12 @@ The logistic distribution is a symmetric continuous probability distribution. It
 ## 5. The use of seeds in generating pseudorandom numbers <a name="section4"></a>
 The Real Python reference below asks the question: How random is random? Pseudorandom numbers (as opposed to truly random ones) are generated in the computer via algorithms called pseudorandom number generators. However, the behaviour of a generator can be predicted if the seed used to initialize it is known. Obviously, that's not a good situation for security-sensitive applications such as cryptography. So it's important to know a little bit about how these numbers are generated in the computer. 
 
+<figure>
+  <img src=images/numpy-random-seed_featured-image.png width="400" height="300"/>
+  <figcaption>Image: https://www.sharpsightlabs.com</figcaption>
+</figure>
+
+
 <p align="center"> 
     <img src=images/numpy-random-seed_featured-image.png width="400" height="300">
  </p>
